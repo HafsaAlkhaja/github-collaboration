@@ -16,8 +16,9 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 
 // Import Routes
+const ExerciseCategoryRouter = require("./routs/exerciseCategory")
 // Mount Routes
-
+app.use("/exerciseCategory", ExerciseCategoryRouter)
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
   console.log(`Running on PORT ${PORT}`)
