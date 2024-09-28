@@ -17,8 +17,10 @@ app.use(expressLayouts)
 
 // Import Routes
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
+const ExerciseRouter = require("./routs/exercise")
 // Mount Routes
 app.use("/exerciseCategory", ExerciseCategoryRouter)
+app.use("/exercise", ExerciseRouter)
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
   console.log(`Running on PORT ${PORT}`)
