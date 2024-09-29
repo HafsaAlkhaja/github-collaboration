@@ -1,0 +1,18 @@
+<%exercise.forEach(function(exercise){%>
+  <div>
+    <h1><%= exercise.name%></h1>
+    <p><%=exercise.description%></p>
+    <p><%=exercise.duration%></p>
+    <p><%=exercise.exerciseCategory.name%></p>
+    <% exercise.imgs.forEach(function(image) { %>
+      <img src="/uploads/<%= image %>" alt="Exercise Image" style="width: 200px; height: auto;">
+      <% }) %>
+    <br>
+    <a href="/exercise/details?id=<%= exercise._id%>"> show details</a>
+    <br>
+    <a href="/exercise/edit?id=<%= exercise._id%>"> edit category</a>
+    <br>
+    <a href="/exercise/delete?id=<%= exercise._id%>"> delete category</a>
+  </div>
+  <hr>
+  <%})%>

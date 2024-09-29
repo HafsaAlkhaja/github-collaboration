@@ -5,7 +5,7 @@ const exerciseCategoryScema = mongoose.Schema({
   exercise: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "exercise",
+      ref: "Exercise",
     },
   ],
 })
