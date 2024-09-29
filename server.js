@@ -15,12 +15,9 @@ const app = express()
 require("./config/passport")
 app.use(express.static("public"))
 //database configarition
-<<<<<<< HEAD
+
 const dp = require("./config/db")
 app.get("/", function (req, res) {})
-=======
-const db = require("./config/db")
->>>>>>> f814292b6ebae0dc1f3a4aaefddaee3e6d3d34f8
 
 app.set("view engine", "ejs")
 //
@@ -43,27 +40,21 @@ app.use(expressLayouts)
 app.use(express.static(path.join(__dirname, "public")))
 
 // Import Routes
-<<<<<<< HEAD
-const indexRouter = require("./routes/index")
 
-// Mount Routes
-app.use("/index", indexRouter)
 app.use(express.static("public"))
-=======
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
-
+const indexRouter = require("./routes/index")
 const scheduleRouter = require("./routs/schedule")
+const authRouter = require("./routs/auth")
+const ExerciseRouter = require("./routs/exercise")
+
 // Mount Routes
 app.use("/exerciseCategory", ExerciseCategoryRouter)
-app.use('/schedule', scheduleRouter)
-const authRouter = require("./routs/auth")
-
-const ExerciseRouter = require("./routs/exercise")
-// Mount Routes
+app.use("/schedule", scheduleRouter)
 app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/exercise", ExerciseRouter)
 app.use("/", authRouter)
->>>>>>> f814292b6ebae0dc1f3a4aaefddaee3e6d3d34f8
+app.use("/index", indexRouter)
 
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
