@@ -1,0 +1,9 @@
+<% exerciseCategory.forEach(function(exerciseCategory){%>
+<div>
+<h1><%= exerciseCategory.name%></h1>
+<p><%= exerciseCategory.description%></p>
+<a href="/exerciseCategory/details?id=<%= exerciseCategory._id%>"> show details</a>
+<a href="/exerciseCategory/edit?id=<%= exerciseCategory._id%>"> edit category</a>
+<a href="/exerciseCategory/delete?id=<%= exerciseCategory._id%>"> delete category</a>
+</div>
+<%})%>
