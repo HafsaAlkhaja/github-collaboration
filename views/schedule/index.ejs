@@ -1,0 +1,17 @@
+<h1> My Schedule</h1>
+
+<% if (schedules.length > 0) { %>
+  <ul>
+      <% schedules.forEach(schedule => { %>
+          <li>
+              <strong>Name:</strong> <%= schedule.name %><br>
+              <strong>Description:</strong> <%= schedule.description %><br>
+              <strong>Exercises:</strong> <%= schedule.exercise.name %> 
+          </li>
+      <% }) %>
+  </ul>
+<% } else { %>
+  <p>No schedules found. Create one!</p>
+<% } %>
+
+<a href="/exercise/add">Create New Schedule</a> <!-- Link back to the create page -->
