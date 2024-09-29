@@ -4,7 +4,7 @@ const exerciseScema = mongoose.Schema({
   description: String,
   exerciseCategory: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "exerciseCategory",
+    ref: "ExerciseCategory",
   },
   duration: Number,
   imgs: [String],

@@ -1,0 +1,20 @@
+<!-- views/exerciseCategory/add.ejs -->
+<form action="/exercise/update" method="post">
+  <label for="name">Name</label>
+  <input type="text" name="name" value="<%= exercise.name%>">
+  <hr>
+  <label for="description">Description</label>
+  <input type="text" name="description" value="<%= exercise.description%>">
+  <hr>
+  <label for="Duration">Duration</label>
+  <input type="number" name="duration"  value="<%= exercise.duration%>">
+  <hr>
+  <label for="category">Exersice Category</label>
+  <input type="text" name="exerciseCategory"  value="<%= exercise.exerciseCategory.name%>">
+  <hr>
+  <label for="imgs">Exercise Images</label>
+  <input type="file" name="imgs" accept="image/*" multiple>
+  <hr>
+  <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
+  <button type="submit">Update</button>
+</form>
