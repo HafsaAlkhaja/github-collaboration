@@ -1,7 +1,7 @@
 const express = require("express")
 const { ExerciseCategory } = require("../models/ExerciseCategory")
 const { Exercise } = require("../models/Exercise")
-const path = require("path")
+const upload = require("../config/multer")
 
 exports.exercise_create_get = (req, res) => {
   ExerciseCategory.find()
@@ -13,24 +13,44 @@ exports.exercise_create_get = (req, res) => {
     })
 }
 exports.exercise_create_post = (req, res) => {
-  let exercise = new Exercise(req.body)
-  exercise
-    .save()
-    .then(() => {
-      ExerciseCategory.findById(req.body.exerciseCategory)
-        .then((exerciseCategory) => {
-          exerciseCategory.exercise.push(exercise._id)
-          exerciseCategory.save()
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-      res.redirect("/exercise/index")
-    })
-    .catch((err) => {
+  upload(req, res, (err) => {
+    if (err) {
       console.log(err)
+    }
+
+    const imageFilenames = req.files
+      ? req.files.map((file) => file.filename)
+      : []
+
+    const exercise = new Exercise({
+      name: req.body.name,
+      description: req.body.description,
+      duration: req.body.duration,
+      exerciseCategory: req.body.exerciseCategory,
+      imgs: imageFilenames,
     })
+
+    exercise
+      .save()
+      .then(() => {
+        ExerciseCategory.findById(req.body.exerciseCategory)
+          .then((exerciseCategory) => {
+            exerciseCategory.exercise.push(exercise._id)
+            return exerciseCategory.save()
+          })
+          .then(() => {
+            return res.redirect("/exercise/index")
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  })
 }
+
 exports.exercise_index_get = (req, res) => {
   Exercise.find()
     .populate("exerciseCategory")
