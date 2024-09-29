@@ -61,3 +61,4 @@ exports.exercisecat_delete_get = (req, res) => {
       console.log(err)
     })
 }
+

@@ -1,0 +1,32 @@
+<h1>My Schedule</h1>
+
+<form method="POST" action="/schedule/add">
+
+  <div>
+    <label>Name</label>
+    <input name="name" type="text">
+  </div>
+
+  <div>
+    <label>Date</label>
+    <input name="date" type="date">
+  </div>
+
+  <div>
+    <label>Time</label>
+    <input name="time" type="number">
+  </div>
+
+  <div>
+    <label>Select a Category</label>
+    <select name="exerciseCategory[]" multiple="multiple" class="form-control">
+        <% exerciseCategory.forEach(function(category) { %>
+            <option value="<%= category._id %>"><%= category.name %></option>
+        <% }) %>
+    </select>
+</div>
+
+  
+
+</form>
+
