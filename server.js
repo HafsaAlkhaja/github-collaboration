@@ -28,23 +28,24 @@ app.use(
     saveUninitialized: true,
   })
 )
+
 app.use(passport.initialize())
 app.use(passport.session())
 // Share the information with other pages
 app.use(function (req, res, next) {
+  console.log("req.user", req.user)
   res.locals.user = req.user
   next()
 })
 app.use(expressLayouts)
 app.use(express.static(path.join(__dirname, "public")))
 
-
-const indexRouter = require("./routes/index")
+const indexRouter = require("./routs/index")
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
-const indexRouter = require("./routes/index")
 const scheduleRouter = require("./routs/schedule")
 const authRouter = require("./routs/auth")
 const ExerciseRouter = require("./routs/exercise")
+const UserRouter = require("./routs/user")
 
 // Mount Routes
 app.use("/exerciseCategory", ExerciseCategoryRouter)
@@ -55,7 +56,7 @@ app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/exercise", ExerciseRouter)
 app.use("/", authRouter)
 app.use("/index", indexRouter)
-
+app.use("/user", UserRouter)
 
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
