@@ -4,8 +4,10 @@ exports.login_auth_google = passport.authenticate("google", {
 })
 exports.callback_auth_google = (req, res) => {
   passport.authenticate("google", {
-    successRedirect: "home/index",
-    failureRedirect: "/home/index",
+
+    successRedirect: "/index",
+    failureRedirect: "/index",
+
   })(req, res)
 }
 exports.logout_auth_google = (req, res) => {
