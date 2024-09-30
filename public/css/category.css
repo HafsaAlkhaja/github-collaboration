@@ -1,0 +1,57 @@
+.category-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+a.category-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.category-actions {
+  display: flex;
+  justify-content: right;
+}
+
+.btn-edit,
+.btn-delete {
+  text-decoration: none;
+  margin: 10px;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.btn-edit {
+  background-color: #e9e9e9;
+  color: #333;
+}
+
+.btn-delete {
+  background-color: #ff0000;
+  color: #fff;
+}
