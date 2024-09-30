@@ -1,5 +1,5 @@
-const exporess = require("express")
-const router = exporess.Router()
+const express = require("express")
+const router = express.Router()
 //controllers
 const authctrl = require("../controllers/auth")
 //routs

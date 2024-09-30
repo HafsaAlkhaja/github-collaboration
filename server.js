@@ -40,7 +40,6 @@ app.use(function (req, res, next) {
 app.use(expressLayouts)
 app.use(express.static(path.join(__dirname, "public")))
 
-
 const indexRouter = require("./routs/index")
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
 const scheduleRouter = require("./routs/schedule")
@@ -51,14 +50,10 @@ const UserRouter = require("./routs/user")
 // Mount Routes
 app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/schedule", scheduleRouter)
-app.use("/exerciseCategory", ExerciseCategoryRouter)
-app.use("/schedule", scheduleRouter)
-app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/exercise", ExerciseRouter)
 app.use("/", authRouter)
 app.use("/index", indexRouter)
 app.use("/user", UserRouter)
-
 
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
