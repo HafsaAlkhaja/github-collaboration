@@ -18,7 +18,6 @@ app.use(express.static("public"))
 
 const dp = require("./config/db")
 app.get("/", function (req, res) {})
-
 app.set("view engine", "ejs")
 //
 app.use(expressLayouts)
@@ -39,9 +38,8 @@ app.use(function (req, res, next) {
 app.use(expressLayouts)
 app.use(express.static(path.join(__dirname, "public")))
 
-// Import Routes
 
-app.use(express.static("public"))
+const indexRouter = require("./routes/index")
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
 const indexRouter = require("./routes/index")
 const scheduleRouter = require("./routs/schedule")
@@ -52,9 +50,12 @@ const ExerciseRouter = require("./routs/exercise")
 app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/schedule", scheduleRouter)
 app.use("/exerciseCategory", ExerciseCategoryRouter)
+app.use("/schedule", scheduleRouter)
+app.use("/exerciseCategory", ExerciseCategoryRouter)
 app.use("/exercise", ExerciseRouter)
 app.use("/", authRouter)
 app.use("/index", indexRouter)
+
 
 //listen for http request on PORT 4000
 app.listen(PORT, () => {
