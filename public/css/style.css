@@ -1,0 +1,9 @@
+.containerss {
+  display: flex;
+}
+.boxes {
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+  margin: 20px;
+}
