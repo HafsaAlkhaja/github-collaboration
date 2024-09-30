@@ -38,7 +38,8 @@ exports.schedule_create_post = (req, res)=>{
 }
 
 exports.schedule_index_get=(req, res)=>{
-  Schedule.find().populate('exercise')
+  Schedule.find().populate('exerciseCategory')
+  .findById("exercise")
   .then((schedules)=>{
     res.render('schedule/index', {schedules})
   })
@@ -49,6 +50,7 @@ exports.schedule_index_get=(req, res)=>{
 
 exports.addSchedule = (req, res) => {
   ExerciseCategory.find()
+  .populate("exercise")
       .then((exerciseCategory) => {
           res.render('schedule/add', { exerciseCategory: exerciseCategory}) }) // Replace 'yourViewFile' with the actual name of your EJS file
       
