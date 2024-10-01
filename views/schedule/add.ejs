@@ -55,6 +55,9 @@
                       <%= exercises.name %>
                       <%= exercises.description %>
                     </h1>
+                    <input type="checkbox" name="exercise" value="<%= exercises._id %>"> Select
+                    <div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -64,5 +67,5 @@
     <%})%>
   </div>
 </div>
-
+<button type="submit" class="btn btn-primary mt-3">Add to Schedule</button>
 </form>

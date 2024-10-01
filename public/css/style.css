@@ -11,7 +11,10 @@
   background-color: aqua;
   margin: 20px;
 }
-* Global body style */
+* Global body style */ body {
+  font-family: 'Poppins', sans-serif;
+
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f0f4f8;
@@ -203,7 +206,6 @@ header {
   font-size: 1.3rem;
 }
 
-
 #createButton {
   text-align: left;
   margin-left: 30px;
@@ -268,3 +270,61 @@ header {
   font-size: 16px;
   border-radius: 12px;
 } */
+
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+h1#title {
+  font-family: pacifico;
+  font-size: 36px;
+  padding: 30px;
+}
+h1#header {
+  padding: 10px;
+  font-size: 32px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+article {
+  border-radius: 50px;
+  height: size;
+
+  background-color: #fff;
+  padding: 10px 30px 5px;
+  cursor: pointer;
+
+  .img-wrapper {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    background-color: bg;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  h1 {
+    height: size/2;
+    line-height: size/2;
+    font-size: 24px;
+    border-bottom: 2px solid bg;
+    color: #050505;
+  }
+  p {
+    color: #888;
+  }
+  a {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    line-height: size;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    font-size: 48px;
+    font-style: italic;
+    opacity: 0;
+    color: #428bca !important;
+  }
+}

@@ -27,7 +27,9 @@ exports.exercisecat_index_get = (req, res) => {
 }
 exports.exercisecat_details_get = (req, res) => {
   ExerciseCategory.findById(req.query.id)
+    .populate("exercise")
     .then((exerciseCategory) => {
+      console.log(exerciseCategory)
       res.render("exerciseCategory/details", { exerciseCategory })
     })
     .catch((err) => {
@@ -61,4 +63,3 @@ exports.exercisecat_delete_get = (req, res) => {
       console.log(err)
     })
 }
-

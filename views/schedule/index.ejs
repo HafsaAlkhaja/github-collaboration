@@ -1,17 +1,45 @@
-<h1> My Schedule</h1>
-
+<h1 id="title"> My Schedule</h1>
+<div class="container list-article">
+   
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-xs-12 article-wrapper">
+      <article>
+        <div class="img-wrapper"><img src="http://lorempixel.com/150/150/fashion" alt="" /></div>
 <% if (schedules.length > 0) { %>
   <ul>
       <% schedules.forEach(schedule => { %>
-          <li>
-              <strong>Name:</strong> <%= schedule.name %><br>
-              <strong>Description:</strong> <%= schedule.description %><br>
-              <strong>Exercises:</strong> <%= schedule.exercise.name %> 
-          </li>
-      <% }) %>
+          
+             <h1 id="header"><strong>Name:</strong> <%= schedule.name %><br></h1>
+              <strong>Date:</strong> <%= schedule.date %><br>
+              <% schedule.exercise.forEach(exercise => { %>
+                
+                  <strong>Exercise:</strong> <%= exercise.name %> <br>
+                  <strong>Category:</strong> <%= exercise.exerciseCategory ? exercise.exerciseCategory.name : 'N/A' %> <br>
+              
+          <% }) %>
+      </ul>
+    </article>
+  </div>
+  <div class="col-xs-12 article-wrapper">
+  
+<% }) %>
+
   </ul>
 <% } else { %>
   <p>No schedules found. Create one!</p>
 <% } %>
 
-<a href="/exercise/add">Create New Schedule</a> <!-- Link back to the create page -->
+<a href="/schedule/add">Create New Schedule</a> <!-- Link back to the create page --> 
+
+
+
+
+
+
+<style>
+  body{
+    background-color: rgb(211, 218, 240);
+  }
+</style>

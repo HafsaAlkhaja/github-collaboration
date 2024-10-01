@@ -1,9 +1,23 @@
 <div>
   <h1>
-    <%= exerciseCategory.name%>
+    <%= exerciseCategory.name %>
   </h1>
   <p>
-    <%= exerciseCategory.description%>
+    <%= exerciseCategory.description %>
   </p>
- 
+
+  <!-- Loop through the exercises -->
+  <h2>Exercises:</h2>
+    <ul>
+      <% exerciseCategory.exercise.forEach(function(exercise) { %>
+        <li>
+          <h3>
+            <%= exercise.name %>
+          </h3>
+          <p>Description: <%= exercise.description %>
+          </p>
+          <p>Duration: <%= exercise.duration %> minutes</p>
+        </li>
+        <% }) %>
+    </ul>
 </div>

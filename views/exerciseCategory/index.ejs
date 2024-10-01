@@ -1,9 +1,16 @@
-<% exerciseCategory.forEach(function(exerciseCategory){%>
-<div>
-<h1><%= exerciseCategory.name%></h1>
-<p><%= exerciseCategory.description%></p>
-<a href="/exerciseCategory/details?id=<%= exerciseCategory._id%>"> show details</a>
-<a href="/exerciseCategory/edit?id=<%= exerciseCategory._id%>"> edit category</a>
-<a href="/exerciseCategory/delete?id=<%= exerciseCategory._id%>"> delete category</a>
-</div>
-<%})%>
+<% exerciseCategory.forEach(function(exerciseCategory) { %>
+  <a href="/exerciseCategory/details?id=<%= exerciseCategory._id %>" class="category-link">
+  <div class="category-box">
+      <h1>
+        <%= exerciseCategory.name %>
+      </h1>
+      <p>
+        <%= exerciseCategory.description %>
+      </p>
+      <div class="category-actions">
+        <a href="/exerciseCategory/edit?id=<%= exerciseCategory._id %>" class="btn-edit">Edit Category</a>
+        <a href="/exerciseCategory/delete?id=<%= exerciseCategory._id %>" class="btn-delete">Delete Category</a>
+      </div>
+    </div>
+  </a>
+  <% }) %>

@@ -6,10 +6,10 @@ const scheduleSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  excercise: [
+  exercise: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "excercise",
+      ref: "Exercise",
     },
   ],
 })
