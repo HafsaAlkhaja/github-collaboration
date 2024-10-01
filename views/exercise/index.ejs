@@ -3,7 +3,6 @@
     <h1><%= exercise.name%></h1>
     <p><%=exercise.description%></p>
     <p><%=exercise.duration%></p>
-    <p><%=exercise.exerciseCategory.name%></p>
     <% exercise.imgs.forEach(function(image) { %>
       <img src="/uploads/<%= image %>" alt="Exercise Image" style="width: 200px; height: auto;">
       <% }) %>

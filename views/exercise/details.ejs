@@ -1,18 +1,31 @@
-<div>
-  <h1>
-    <%= exercise.name%>
-  </h1>
-  <p>
-    <%=exercise.description%>
-  </p>
-  <p>
-    <%=exercise.duration%>
-  </p>
-  <p>
-    <%=exercise.exerciseCategory.name%>
-  </p>
-  <%exercise.imgs.forEach(function(image) { %>
-    <img src="<%= image %>" alt="<%= exercise.name %> image" style="width: 200px; height: auto;">
-  <% }) %>
-     
+<div class="container py-5">
+  <div class="exercise-details text-center">
+    <h1 class="display-4">
+      <%= exercise.name %>
+    </h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+      <div class="carousel-inner">
+        <% exercise.imgs.forEach(function(image) { %>
+          <div class="carousel-item active">
+            <img src="/uploads/<%= image %>" alt="<%= exercise.name %> image" class="d-block w-100" alt="...">
+          </div>
+          <% }) %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <p class="lead">
+      <%= exercise.description %>
+    </p>
+    <p><strong>Duration:</strong>
+      <%= exercise.duration %> minutes
+    </p>
+  </div>
 </div>
+
