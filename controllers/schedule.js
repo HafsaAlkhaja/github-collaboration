@@ -15,14 +15,21 @@ exports.schedule_create_get = (req, res) =>{
 
 exports.schedule_create_post = (req, res)=>{
   console.log(req.body)
-  let schedule = new Schedule(req.body)
+  let exercises = Array.isArray(req.body.exercise) ? req.body.exercise : [req.body.exercise];
+  let schedule = new Schedule({
+    name: req.body.name,
+    date: req.body.date,
+    time: req.body.time,
+    exercise: exercises
+})
+
 
   schedule.save()
-  .then(()=>{
+  .then(() => {
     req.body.exercise.forEach(exercise => {
       Exercise.findById(exercise)
       .then((exercise)=>{
-        exercise.schedule.push(schedule)
+        exercise.schedule.push(schedule._id)
         exercise.save()
       })
       .catch((err)=>{
@@ -38,8 +45,14 @@ exports.schedule_create_post = (req, res)=>{
 }
 
 exports.schedule_index_get=(req, res)=>{
-  Schedule.find().populate('exerciseCategory')
-  .findById("exercise")
+  Schedule.find()
+  .populate({
+    path: 'exercise', // Ensure this matches the field name in your schema
+    populate: {
+        path: 'exerciseCategory', // Assuming each exercise has a reference to a category
+        model: 'ExerciseCategory' // Ensure this matches the model name for categories
+    }
+})
   .then((schedules)=>{
     res.render('schedule/index', {schedules})
   })
