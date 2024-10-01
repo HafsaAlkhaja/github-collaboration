@@ -13,3 +13,4 @@ exports.logout_auth_google = (req, res) => {
     res.redirect("/index")
   })
 }
+
