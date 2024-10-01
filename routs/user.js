@@ -8,5 +8,6 @@ const userCtrl = require("../controllers/user")
 router.get("/profile", ensureLoggedIn, userCtrl.user_show_get)
 router.get("/profile", userCtrl.user_edit_get)
 router.post("/profile", ensureLoggedIn, userCtrl.user_update_post)
-// router.get("/delete", ensureLoggedIn, userCtrl.user_delete_get)
+router.post("/delete", ensureLoggedIn, userCtrl.user_delete_post)
+
 module.exports = router

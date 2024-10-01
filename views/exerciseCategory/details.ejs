@@ -1,13 +1,14 @@
-<div class="category-box">
+<%- include('../stylingpath/styles', { cssFile: '/css/category.css' }) %>
+<!-- <div class="category-box">
   <h1>
     <%= exerciseCategory.name %>
   </h1>
   <p>
     <%= exerciseCategory.description %>
   </p>
-</div>
+</div> -->
 <div class="exercise-container">
-  <h1 >Exercises:</h1>
+  <h1><%= exerciseCategory.name %> Exercises:</h1>
   <div class="exercise">
     <% exerciseCategory.exercise.forEach(function(exercise) { %>
       <div class="card exercise-card">
@@ -18,7 +19,7 @@
           </h5>
           <p class="card-text">Description: <%= exercise.description %>
           </p>
-          <a href="../exercise/details?id=<%= exercise._id%>" class="btn btn-primary">Show Details</a>
+          <a href="../exercise/details?id=<%= exercise._id%>" class="btn">Show Details</a>
         </div>
       </div>
       <% }) %>

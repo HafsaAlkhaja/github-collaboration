@@ -1,23 +1,19 @@
-<!-- views/exerciseCategory/add.ejs -->
+<%- include('../stylingpath/styles', { cssFile: '/css/exercise.css' }) %>
 <form action="/exercise/add" method="post" enctype="multipart/form-data">
   <label for="name">Name</label>
   <input type="text" name="name">
-  <hr>
   <label for="description">Description</label>
   <input type="text" name="description">
-  <hr>
   <label for="Duration">Duration</label>
   <input type="number" name="duration">
-  <hr>
   <label for="category">Exersice Category</label>
   <select name="exerciseCategory" id="exerciseCategory">
     <%exerciseCategory.forEach(function(exerciseCategory){%>
       <option value="<%=exerciseCategory._id%>"><%=exerciseCategory.name%></option>
       <%})%>
   </select>
-  <hr>
   <label for="imgs">Choose images:</label>
   <input type="file" name="imgs" id="imgs" multiple> 
-  <hr>
+
   <button type="submit">Create</button>
 </form>

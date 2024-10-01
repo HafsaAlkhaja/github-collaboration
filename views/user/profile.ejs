@@ -1,5 +1,5 @@
-<!-- 
-<form method="POST" action="/user/profile">
+<%- include('../stylingpath/styles', { cssFile: '/css/profile.css' }) %>
+<form method="POST" action="/user/profile" class="profile-form">
   <div>
     <label>Name</label>
 
@@ -27,36 +27,11 @@
     <input type= "text" name ="goal" class="form-control" value="<%= user.goal %>"/>
   </div>
     <br>
-    <button type="submit" class="btn btn-primary">Create your profile</button>
-
-    <!-- <button type="submit" class="btn btn-primary"><a href="/user/delete?id=<%=user%>"> Delete your profile</a></button> -->
-  <!-- </div>
-</form> --> 
-
-<form method="POST" action="/user/profile" class="profile-form">
-  <div style="display: flex; align-items: center;">
-    <img src="<%= user.avatar %>" alt="Profile Picture" class="profile-picture">
-    <div class="profile-info">
-      <label>Name</label>
-      <input type="text" name="name" class="form-control" value="<%= user.name %>">
-      <label>Email Address</label>
-      <input type="text" name="email" class="form-control" value="<%= user.email %>">
-    </div>
+    <button type="submit" >Create your profile</button>
   </div>
-  <div class="profile-box">
-    <label>Weight</label>
-    <input type="number" name="weight" class="form-control" value="<%= user.weight %>">
-    <label>Height</label>
-    <input type="number" name="height" class="form-control" value="<%= user.height %>">
-    <label>Medical condition *if needed*</label>
-    <input type="text" name="medical" class="form-control" value="<%= user.medical %>">
-    <label>Let us know what is your goal</label>
-    <input type="text" name="goal" class="form-control" value="<%= user.goal %>">
-  </div>
-  <button type="submit" class="submit-button">Create your profile</button>
 </form>
-
-    <button type="submit" class="btn btn-primary">Delete your profile</button>
-  </div>
+<form method="POST" action="/user/delete" class="deleteform">
+  <button type="submit" onclick="return confirm('Are you sure you want to delete your profile?');">Delete
+    Profile</button>
 </form>
 

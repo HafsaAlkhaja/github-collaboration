@@ -1,11 +1,9 @@
-<!-- views/exerciseCategory/add.ejs -->
+<%- include('../stylingpath/styles', { cssFile: '/css/category.css' }) %>
 <form action="/exerciseCategory/update" method="post">
   <label for="name">Name</label>
   <input type="text" name="name" value="<%= exerciseCategory.name%>">
-  <hr>
   <label for="description">Description</label>
   <input type="text" name="description" value="<%= exerciseCategory.description%>">
-  <hr>
   <input type="hidden" value="<%= exerciseCategory._id%>" name="id">
   <button type="submit">Update</button>
 </form>

@@ -1,4 +1,4 @@
-
+<%- include('../stylingpath/styles', { cssFile: '/css/category.css' }) %>
 <% exerciseCategory.forEach(function(exerciseCategory) { %>
   <a href="/exerciseCategory/details?id=<%= exerciseCategory._id %>" class="category-link">
   
@@ -10,10 +10,12 @@
       <p>
         <%= exerciseCategory.description %>
       </p>
+      <% if (user && user.role==="admin" ) { %>
       <div class="category-actions">
         <a href="/exerciseCategory/edit?id=<%= exerciseCategory._id %>" class="btn-edit">Edit Category</a>
         <a href="/exerciseCategory/delete?id=<%= exerciseCategory._id %>" class="btn-delete">Delete Category</a>
       </div>
+      <% } %>
     </div>
   </a>
   <% }) %>

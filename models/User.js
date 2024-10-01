@@ -12,6 +12,11 @@ const userSchema = mongoose.Schema(
     height: Number,
     medical: String,
     goal: String,
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
   },
   {
     timestamps: true,

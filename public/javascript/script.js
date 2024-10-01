@@ -1,12 +1,14 @@
 function toggleProfileDropdown() {
-  const dropdown = document.getElementById("profileDropdownMenu")
-  dropdown.classList.toggle("show")
+  const dropdownMenu = document.getElementById("profileDropdownMenu")
+  dropdownMenu.classList.toggle("show")
 }
-function toggleBurgerMenu() {
-  const burgerDropdown = document.getElementById("burgerDropdownMenu")
-  burgerDropdown.classList.toggle("show")
-  const burgerIcon = document.getElementById("burgerIcon")
-  const closeIcon = document.getElementById("closeIcon")
-  burgerIcon.classList.toggle("hidden")
-  closeIcon.classList.toggle("hidden")
-}
+
+// Dropdown toggle script
+document.addEventListener("DOMContentLoaded", function () {
+  const adminDropdown = document.getElementById("adminDropdown")
+  const dropdownMenu = document.querySelector(".dropdown-menu")
+
+  adminDropdown.addEventListener("click", function (event) {
+    dropdownMenu.classList.toggle("show")
+  })
+})

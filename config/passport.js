@@ -30,6 +30,7 @@ passport.use(
           height: 0,
           medical: "",
           goal: "",
+          role: "user",
         })
         return cb(null, user)
       } catch (err) {
