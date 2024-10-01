@@ -5,15 +5,12 @@
 ### **Description**
 #### Our project ......
 
-
-
 ### **Technologies implemented**
 - Cascading Style Shets (CSS)
 - JavaScript (JS)
 - Express
 - ejs
 - MonogoDB
-
 
 
 ### **ScreenShots** 

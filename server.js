@@ -41,7 +41,6 @@ app.use(express.static(path.join(__dirname, "public")))
 
 const indexRouter = require("./routes/index")
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
-const indexRouter = require("./routes/index")
 const scheduleRouter = require("./routs/schedule")
 const authRouter = require("./routs/auth")
 const ExerciseRouter = require("./routs/exercise")

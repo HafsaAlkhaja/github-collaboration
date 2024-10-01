@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 .containerss {
   display: flex;
 }
@@ -23,34 +26,43 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-bottom: 2px solid #e5e5e5;
   position: relative; /* Add relative positioning for centering */
 }
+
 .logo-container {
   display: flex;
   align-items: center;
 }
+
+.logo-container img {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
 .text-container {
   position: absolute;
-  left: 50%;
+  left: 42%;
   transform: translateX(-50%);
   text-align: center;
 }
 .head {
   font-size: 4rem;
-  margin: 0;
-  color: #3f3d56;
+  font-family: fantasy;
+  margin-top: 5px;
+  margin-right: 285px;
+  color: #272727;
 }
 .quet {
   margin: 5px 0 0 0;
   font-size: 1.2rem;
-  color: #777;
+  color: #616161;
 }
 .dropdown-container {
   display: flex;
+  padding-right: 80px;
   align-items: center;
   gap: 30px;
 }
@@ -190,3 +202,69 @@ header {
 .btn-lg {
   font-size: 1.3rem;
 }
+
+
+#createButton {
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+} */
