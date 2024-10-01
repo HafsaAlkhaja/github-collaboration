@@ -1,3 +1,22 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.containerss {
+  display: flex;
+}
+.boxes {
+  height: 200px;
+  width: 200px;
+  background-color: aqua;
+  margin: 20px;
+}
+* Global body style */ body {
+  font-family: 'Poppins', sans-serif;
+
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f0f4f8;
@@ -5,7 +24,9 @@ body {
   padding: 0;
   color: #333;
   width: 100vw;
+
 }
+
 /* Header styling */
 /* Header styling */
 header {
@@ -16,7 +37,7 @@ header {
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-bottom: 2px solid #e5e5e5;
-  position: relative; /* Add relative positioning for centering */
+  position: relative;
 }
 .logo-container {
   display: flex;
@@ -182,13 +203,175 @@ header {
 
 .glowyStuff {
   height: 50px;
-  margin: 5px;
+  margin: 50px;
   width: 120px;
   background: #333;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
+
+  .img-wrapper {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    background-color: bg;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  h1 {
+    height: size/2;
+    line-height: size/2;
+    font-size: 24px;
+    border-bottom: 2px solid bg;
+    color: #050505;
+  }
+  p {
+    color: #888;
+  }
+  a {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    line-height: size;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    font-size: 48px;
+    font-style: italic;
+    opacity: 0;
+    color: #428bca !important;
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  width: 100vw;
+  background-color: #000000;
+  background-image: url("/imagesGym\ Background2.png");
+  background-size: cover;
+}
+
+#Logo img{
+  width: 150px;
+  padding-left: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.603);
+}
+
+
+a {
+  color: #000000;
+  font-size: 15px;
+  text-decoration: none;
+  text-decoration: solid;
+}
+
+a:hover {
+  color: rgb(255, 0, 0);
+}
+
+ul{
+  float: right;
+  padding-right: 10px;
+}
+
+li{
+  display: inline-block;
+  padding-left: 50px;
+  font-family: fantasy;
+}
+
+.expressions{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  padding-top: 180px;
+  padding-right: 15rem;
+}
+
+
+h2{
+  color: white;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  float: right;
+  padding-bottom: 10px;
+}
+
+h1{
+  color: white;
+  font-size: 60px;
+  letter-spacing: .2rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .neonIcon{
+  background-color: white;
+  transition: width 0.2s;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: 170px;
+  margin-left: 15px;
+}
+
+.neonIcon:hover{
+  color: red;
+}
+
+.neonIcon img{
+  height: 50px;
+  width: 50px;
+  display: flex;
+  padding: 22%;
+
+} */
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -224,6 +407,7 @@ header {
 
 .scheduleDetailB {
   text-decoration: none;
+
   color: white;
 }
 .profile-form {
@@ -303,3 +487,71 @@ header {
 .submit-button:hover {
   background-color: #f52d2de2;
 }
+
+  color:white;
+}
+
+
+
+.schedule-wrap {
+  max-width: 800px; /* Adjust as needed */
+  margin: 20px auto; /* Center the box and add vertical spacing */
+  padding: 20px; /* Optional: add some padding */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #fff; /* Optional: set a background color */
+  border-radius: 8px; /* Optional: add rounded corners */
+}
+
+.schedule-wrap {
+  max-width: 800px; /* Adjust as needed */
+  margin: 20px auto; /* Center the box and add vertical spacing */
+  padding: 20px; /* Optional: add some padding */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #fff; /* Optional: set a background color */
+  border-radius: 8px; /* Optional: add rounded corners */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center the items horizontally */
+}
+
+#scheduletitle {
+  text-align: center; /* Center the title text */
+  margin-bottom: 20px; /* Space below the title */
+  font-size: 30px;
+}
+
+.container.list-article {
+  width: 100%; /* Full width for the article container */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack articles vertically */
+  align-items: center; /* Center articles horizontally */
+}
+
+.article-wrapper {
+  background-color: #f9f9f9; /* Light background for contrast */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Padding inside the box */
+  margin-bottom: 20px; /* Space between articles */
+  text-align: left; /* Align text to the left */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px; /* Subtle shadow */
+}
+.scheduleh2{
+  margin: 0 0 10px 0; /* Remove top margin and add bottom margin */
+  font-size: 1.5em; /* Slightly larger font size for the title */
+}
+
+.schedulep {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 1em; /* Standard font size */
+}
+
+
