@@ -1,10 +1,8 @@
-<!-- views/exerciseCategory/add.ejs -->
+<%- include('../partials/styles', { cssFile: '/css/category.css' }) %>
 <form action="/exerciseCategory/add" method="post">
   <label for="name">Name</label>
   <input type="text" name="name">
-  <hr>
   <label for="description">Description</label>
   <input type="text" name="description">
-  <hr>
   <button type="submit">Create</button>
 </form>
