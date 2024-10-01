@@ -34,8 +34,7 @@ exports.user_update_post = (req, res) => {
     })
 }
 exports.user_delete_post = (req, res) => {
-  console.log(req.query.id)
-  User.findByIdAndDelete(req.user)
+  User.findByIdAndDelete(req.user._id)
     .then(() => {
       req.logout(function () {
         res.redirect("/index")
@@ -43,5 +42,6 @@ exports.user_delete_post = (req, res) => {
     })
     .catch((err) => {
       console.log(err)
+      res.status(500).send("Error deleting profile")
     })
 }

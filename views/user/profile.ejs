@@ -1,5 +1,5 @@
-
-<form method="POST" action="/user/profile">
+<%- include('../stylingpath/styles', { cssFile: '/css/profile.css' }) %>
+<form method="POST" action="/user/profile" class="profile-form">
   <div>
     <label>Name</label>
 
@@ -27,9 +27,11 @@
     <input type= "text" name ="goal" class="form-control" value="<%= user.goal %>"/>
   </div>
     <br>
-    <button type="submit" class="btn btn-primary">Create your profile</button>
-
-    <button type="submit" class="btn btn-primary">Delete your profile</button>
+    <button type="submit" >Create your profile</button>
   </div>
+</form>
+<form method="POST" action="/user/delete" class="deleteform">
+  <button type="submit" onclick="return confirm('Are you sure you want to delete your profile?');">Delete
+    Profile</button>
 </form>
 

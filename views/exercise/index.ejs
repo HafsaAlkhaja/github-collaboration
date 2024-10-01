@@ -1,17 +1,27 @@
-<%exercise.forEach(function(exercise){%>
-  <div>
-    <h1><%= exercise.name%></h1>
-    <p><%=exercise.description%></p>
-    <p><%=exercise.duration%></p>
-    <% exercise.imgs.forEach(function(image) { %>
-      <img src="/uploads/<%= image %>" alt="Exercise Image" style="width: 200px; height: auto;">
+<%- include('../stylingpath/styles', { cssFile: '/css/exercise.css' }) %>
+<div class="exercise-container">
+  <div class="exercise">
+  <%exercise.forEach(function(exercise){%>
+      <div class="card exercise-card">
+        <img src="/uploads/<%= exercise.imgs[0] %>" class="card-img-top exercise-img" alt="<%= exercise.name %>">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= exercise.name %>
+          </h5>
+          <p class="card-text">
+            Description: <%= exercise.description %>
+          </p>
+          <p class="card-text">
+            <%=exercise.duration%> Minutes
+          </p>
+          
+          <a href="/exercise/details?id=<%= exercise._id%>" class="btn"> Show Details</a>
+          <br>
+          <a href="/exercise/edit?id=<%= exercise._id%>" class="btn"> Edit Exercise</a>
+          <br>
+          <a href="/exercise/delete?id=<%= exercise._id%>" class="btn"> Delete Exercise</a>
+        </div>
+      </div>
       <% }) %>
-    <br>
-    <a href="/exercise/details?id=<%= exercise._id%>"> show details</a>
-    <br>
-    <a href="/exercise/edit?id=<%= exercise._id%>"> edit category</a>
-    <br>
-    <a href="/exercise/delete?id=<%= exercise._id%>"> delete category</a>
   </div>
-  <hr>
-  <%})%>
+</div>
