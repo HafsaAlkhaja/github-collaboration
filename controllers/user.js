@@ -33,15 +33,15 @@ exports.user_update_post = (req, res) => {
       console.log(err)
     })
 }
-exports.user_delete_post = (req, res) => {
-  console.log(req.query.id)
-  User.findByIdAndDelete(req.user)
-    .then(() => {
-      req.logout(function () {
-        res.redirect("/index")
-      })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
+// exports.user_delete_get = (req, res) => {
+//   console.log(req.user)
+//   User.findByIdAndDelete(req.user)
+//     .then(() => {
+//       req.logout(function () {
+//         res.redirect("/index")
+//       })
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }

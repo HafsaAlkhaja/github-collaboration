@@ -1,22 +1,6 @@
-
-*{
-  margin: 0;
-  padding: 0;
-}
-.containerss {
-  display: flex;
-}
-.boxes {
-  height: 200px;
-  width: 200px;
-  background-color: aqua;
-  margin: 20px;
-}
-* Global body style */ body {
-  font-family: 'Poppins', sans-serif;
 body {
-  font-family: “Poppins”, sans-serif;
-  background-color: #F0F4F8;
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
   color: #333;
@@ -28,43 +12,34 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-bottom: 2px solid #e5e5e5;
   position: relative; /* Add relative positioning for centering */
 }
-
 .logo-container {
   display: flex;
   align-items: center;
 }
-
-.logo-container img {
-  margin-left: 40px;
-  margin-top: 5px;
-}
-
 .text-container {
   position: absolute;
-  left: 42%;
+  left: 50%;
   transform: translateX(-50%);
   text-align: center;
 }
 .head {
   font-size: 4rem;
-  font-family: fantasy;
-  margin-top: 5px;
-  margin-right: 285px;
-  color: #272727;
+  margin: 0;
+  color: #3f3d56;
 }
 .quet {
   margin: 5px 0 0 0;
   font-size: 1.2rem;
-  color: #616161;
+  color: #777;
 }
 .dropdown-container {
   display: flex;
-  padding-right: 80px;
   align-items: center;
   gap: 30px;
 }
@@ -205,25 +180,6 @@ header {
   font-size: 1.3rem;
 }
 
-#createButton {
-  text-align: left;
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
-/* button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 12px;
-} */
-
 .glowyStuff {
   height: 50px;
   margin: 5px;
@@ -250,7 +206,7 @@ header {
     inset 5px 5px 10px #212121, inset -5px -5px 10px #212121;
 }
 
-.glowyStuff:hover{
+.glowyStuff:hover {
   -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
   box-shadow: 1px 1px 13px #20232e, -1px -1px 13px #545b78;
   color: #d6d6d6;
@@ -258,7 +214,7 @@ header {
   transition: 500ms;
 }
 
-.glowyStuff:active{
+.glowyStuff:active {
   -webkit-box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
   box-shadow: 1px 1px 13px #20232e, -1px -1px 33px #545b78;
   color: #d6d6d6;
@@ -266,7 +222,84 @@ header {
   transition: 100ms;
 }
 
-.scheduleDetailB{
+.scheduleDetailB {
   text-decoration: none;
-  color:white;
+  color: white;
+}
+.profile-form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+  /* display: flex; */
+  align-items: center;
+  margin-right: 70px;
+}
+
+.profile-info label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.profile-info input {
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.profile-box {
+  margin-bottom: 20px;
+}
+
+.profile-box label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+
+.profile-box input {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: larger;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  font-size: large;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f52d2dbb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #f52d2de2;
 }
