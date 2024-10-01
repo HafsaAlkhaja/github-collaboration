@@ -43,18 +43,23 @@
             <li><a class="dropdown-item" href="/index">Home</a></li>
             <li><a class="dropdown-item" href="/exerciseCategory/index">Exercise Categories</a></li>
             <li><a class="dropdown-item" href="/schedule/index">My Schedules</a></li>
-            <li><a class="dropdown-item" href="/schedules/add">Add New Schedule</a></li>
+            <li><a class="dropdown-item" href="/schedule/add">Add New Schedule</a></li>
           </ul>
         </div>
       </div>
       <div class="profile-container" onclick="toggleProfileDropdown()">
         <img src="/images/logo.png" alt="Profile" class="profile-img">
         <div class="dropdown-menu profile-dropdown" id="profileDropdownMenu">
+            <%if(user){%>
           <ul>
             <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
-            <li><a class="dropdown-item" href="/auth/signin">Sign In</a></li>
-            <li><a class="dropdown-item" href="/auth/signout">Sign Out</a></li>
+            <li><a class="dropdown-item" href="/auth/logout">Sign Out</a></li>
           </ul>
+          <%}else {%>
+            <ul>
+              <li><a class="dropdown-item" href="/auth/google">Sign In</a></li>
+            </ul>
+            <%}%>
         </div>
       </div>
     </div>
