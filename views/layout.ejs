@@ -30,27 +30,37 @@
           <li><a href="/schedule/index">My Schedules</a></li>
         </ul>
       </div>
-      <div class="profile-container">
-        <% if (user) { %>
-          <span class="material-symbols-outlined profile-icon" onclick="toggleProfileDropdown()">fitness_center</span>
-          <div class="profile-dropdown" id="profileDropdownMenu">
-            <ul>
-              <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
-              <li><a class="dropdown-item" href="/auth/logout">Sign Out</a></li>
+      <div class="dropdowns">
+        <% if (user && user.role==="admin" ) { %>
+          <li class="dropdown">
+            <a id="adminDropdown" role="button" >
+              <span class="material-symbols-outlined profile-icon">admin_panel_settings</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+              <li><a class="dropdown-item" href="/exerciseCategory/add">Add Exercise Category</a></li>
+              <li><a class="dropdown-item" href="/exercise/index">Exercises</a></li>
+              <li><a class="dropdown-item" href="/exercise/add">Add Exercise</a></li>
             </ul>
-          </div>
-          <% } else { %>
-            <span class="material-symbols-outlined profile-icon" onclick="toggleProfileDropdown()">fitness_center</span>
-            <div class="profile-dropdown" id="profileDropdownMenu">
-              <ul>
-                <li><a class="dropdown-item" href="/auth/google">Sign In</a></li>
+          </li>
+          <% } %>
+      
+            <!-- Profile Dropdown -->
+            <li class="dropdown">
+              <a id="adminDropdown" role="button" >
+                <span class="material-symbols-outlined profile-icon "
+                  onclick="toggleProfileDropdown()">fitness_center</span>
+              </a>
+              <ul class="dropdown-menu" id="profileDropdownMenu">
+                <% if (user) { %>
+                  <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                  <li><a class="dropdown-item" href="/auth/logout">Sign Out</a></li>
+                  <% } else { %>
+                    <li><a class="dropdown-item" href="/auth/google">Sign In</a></li>
+                    <% } %>
               </ul>
-            </div>
-            <% } %>
+            </li>
       </div>
-
-
-    </div>
+      </div>
   </header>
 
   <%- body %>
