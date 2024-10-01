@@ -4,7 +4,7 @@ exports.user_show_get = (req, res) => {
   console.log(req.user)
   User.findById(req.user)
     .then((user) => {
-      console.log("User information")
+      // console.log("User information")
       res.render("user/profile", { user })
     })
     .catch((err) => {
@@ -13,6 +13,7 @@ exports.user_show_get = (req, res) => {
 }
 exports.user_edit_get = (req, res) => {
   console.log(req.query.id)
+  console.log(req.body)
   User.findById(req.query.id)
     .then((user) => {
       res.render("user/profile", { user })
@@ -22,10 +23,11 @@ exports.user_edit_get = (req, res) => {
     })
 }
 exports.user_update_post = (req, res) => {
-  console.log(req.query.id)
-  User.findByIdAndUpdate(req.body.id, req.body)
+  console.log("req.body.id", req.user)
+  console.log(req.body)
+  User.findByIdAndUpdate(req.user, req.body)
     .then(() => {
-      res.render("user/profile")
+      res.redirect("/index")
     })
     .catch((err) => {
       console.log(err)
@@ -33,9 +35,11 @@ exports.user_update_post = (req, res) => {
 }
 exports.user_delete_post = (req, res) => {
   console.log(req.query.id)
-  User.findByIdAndDelete(req.body.id)
+  User.findByIdAndDelete(req.user)
     .then(() => {
-      res.render("/home/index")
+      req.logout(function () {
+        res.redirect("/index")
+      })
     })
     .catch((err) => {
       console.log(err)
