@@ -33,6 +33,7 @@ exports.user_update_post = (req, res) => {
       console.log(err)
     })
 }
+
 exports.user_delete_post = (req, res) => {
   User.findByIdAndDelete(req.user._id)
     .then(() => {

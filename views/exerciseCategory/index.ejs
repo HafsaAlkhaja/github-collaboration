@@ -1,10 +1,12 @@
 <%- include('../stylingpath/styles', { cssFile: '/css/category.css' }) %>
 <% exerciseCategory.forEach(function(exerciseCategory) { %>
   <a href="/exerciseCategory/details?id=<%= exerciseCategory._id %>" class="category-link">
-  <div class="category-box">
-      <h1>
+  
+      <div class="category-box">
+    <h1>
         <%= exerciseCategory.name %>
       </h1>
+      
       <p>
         <%= exerciseCategory.description %>
       </p>
