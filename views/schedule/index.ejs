@@ -15,31 +15,27 @@
               <strong>Date:</strong> <%= schedule.date %><br>
               <% schedule.exercise.forEach(exercise => { %>
                 
-                  <strong>Exercise:</strong> <%= exercise.name %> <br>
-                  <strong>Category:</strong> <%= exercise.exerciseCategory ? exercise.exerciseCategory.name : 'N/A' %> <br>
-              
+                  <strong>Exercise set:</strong><%= exercise.name %> <br>
+                 
           <% }) %>
-      </ul>
+          <button class="glowyStuff">
+                    <a class="scheduleDetailB" href="/schedule/detail?id=<%= schedule._id %>"> Show details
+                    </a>
+                  </button>
+      </ul> 
     </article>
   </div>
   <div class="col-xs-12 article-wrapper">
   
 <% }) %>
-
   </ul>
 <% } else { %>
   <p>No schedules found. Create one!</p>
 <% } %>
 
-<a href="/schedule/add">Create New Schedule</a> <!-- Link back to the create page --> 
+<a href="/schedule/add">Create New Schedule</a> 
 
 
 
 
 
-
-<style>
-  body{
-    background-color: rgb(211, 218, 240);
-  }
-</style>
