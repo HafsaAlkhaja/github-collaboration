@@ -1,17 +1,24 @@
-<h1> My Schedule</h1>
-
-<% if (schedules.length > 0) { %>
-  <ul>
+<div class="schedule-wrap">
+  <h1 id="scheduletitle"> My Schedule </h1>
+  <div class="container list-article">
+    <% if (schedules.length > 0) { %>
       <% schedules.forEach(schedule => { %>
-          <li>
-              <strong>Name:</strong> <%= schedule.name %><br>
-              <strong>Description:</strong> <%= schedule.description %><br>
-              <strong>Exercises:</strong> <%= schedule.exercise.name %> 
-          </li>
+        <div class="article-wrapper">
+          <h2 class="scheduleh2"><strong>Name:</strong> <%= schedule.name %></h2>
+          <p class="scheduleP"><strong>Date:</strong> <%= schedule.date.toDateString() %></p>
+          <div class="exercise-list">
+              <% schedule.exercise.forEach(exercise => { %>
+                  <p class="scheduleP" ><strong>Exercise set:</strong> <%= exercise.name %></p>
+              <% }) %>
+          </div>
+          <button class="glowyStuff">
+              <a class="scheduleDetailB" href="/schedule/detail?id=<%= schedule._id %>">Show details</a>
+          </button>
+      </div>
       <% }) %>
-  </ul>
-<% } else { %>
-  <p>No schedules found. Create one!</p>
-<% } %>
-
-<a href="/exercise/add">Create New Schedule</a> <!-- Link back to the create page -->
+    <% } else { %>
+      <p>No schedules found. Create one!</p>
+    <% } %>
+    <a href="/schedule/add">Create New Schedule</a>
+  </div>
+</div>

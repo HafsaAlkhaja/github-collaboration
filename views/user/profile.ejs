@@ -1,5 +1,5 @@
 
-<form method="POST" action="/user/profile"></form>
+<form method="POST" action="/user/profile">
   <div>
     <label>Name</label>
 
@@ -12,20 +12,24 @@
   </div>
   <div>
     <label>Weight</label>
-    <input type= Number name ="weight" class="form-control" />
+    <input type= Number name ="weight" class="form-control"  value= "<%= user.weight %>"/>
   </div>
   <div>
     <label>height</label>
-    <input type= Number name ="height" class="form-control" />
+    <input type= Number name ="height" class="form-control" value="<%= user.height %>" />
   </div>
   <div>
     <label>Medical condition *if needed* </label>
-    <input type= "text" name ="medical" class="form-control" />
+    <input type= "text" name ="medical" class="form-control" value="<%= user.medical %>"/>
   </div>
   <div>
     <label>Let us know what is your goal</label>
-    <input type= "text" name ="goal" class="form-control" />
+    <input type= "text" name ="goal" class="form-control" value="<%= user.goal %>"/>
   </div>
     <br>
     <button type="submit" class="btn btn-primary">Create your profile</button>
+
+    <button type="submit" class="btn btn-primary">Delete your profile</button>
+  </div>
 </form>
+

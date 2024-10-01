@@ -1,31 +1,35 @@
 //dependencies
-const express = require("express")
-const expressLayouts = require("express-ejs-layouts")
-const path = require("path")
-const session = require("express-session")
-const passport = require("passport")
+const express = require('express')
+const expressLayouts = require('express-ejs-layouts')
+const path = require('path')
+const session = require('express-session')
+const passport = require('passport')
+
+
 
 //require and initialize .env
-require("dotenv").config()
+require('dotenv').config()
 //port number
 const PORT = process.env.PORT
 
 //initalize express
 const app = express()
-require("./config/passport")
-app.use(express.static("public"))
+require('./config/passport')
+app.use(express.static('public'))
 //database configarition
-
-const dp = require("./config/db")
-app.get("/", function (req, res) {})
-app.set("view engine", "ejs")
+app.use(express.urlencoded({ extended: true }));
+const db = require('./config/db')
+app.get('/', function (req, res) {})
+app.set('view engine', 'ejs')
 //
+app.use(express.json());
+
 app.use(expressLayouts)
 app.use(
   session({
     secret: process.env.secret,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: true
   })
 )
 
@@ -38,7 +42,9 @@ app.use(function (req, res, next) {
   next()
 })
 app.use(expressLayouts)
-app.use(express.static(path.join(__dirname, "public")))
+
+app.use(express.static(path.join(__dirname, 'public')))
+
 
 const indexRouter = require("./routs/index")
 const ExerciseCategoryRouter = require("./routs/exerciseCategory")
