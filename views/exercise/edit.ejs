@@ -13,7 +13,8 @@
   <input type="text" name="exerciseCategory"  value="<%= exercise.exerciseCategory.name%>">
 
   <label for="imgs">Exercise Images</label>
-  <input type="file" name="imgs" accept="image/*" multiple>
+  <input type="file" name="imgs" id="imgs" multiple accept="image/*,video/*">
+
 
   <input type="hidden" name="exerciseId" value="<%= exercise._id %>">
   <button type="submit">Update</button>
