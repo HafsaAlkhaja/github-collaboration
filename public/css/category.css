@@ -5,7 +5,12 @@
   margin-top: 20px;
 }
 .category-box {
-  background-color: #ffffff;
+  /* background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2018_20/2436061/180517-weightlift-exercise-dumbell-ac-420p.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px); */
+
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
