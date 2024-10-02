@@ -1,13 +1,24 @@
+<%- include('../stylingpath/styles', { cssFile: '/css/schedule.css' }) %> 
+
+      <div class="ScheduleDetailBorder">
+        <div class="innerBorderSchedule">
 <h2> <%= schedule.name %></h2>
-<div>
+
   Date: <%= schedule.date%>
-</div>
 
-<div>
-Time: <%= schedule.time%>
-</div>
-
-<div>
-  Exercise: <%= schedule.exercise>
-</div>
+ 
+    <%schedule.exercise.forEach(function(exercise){%>
+        
+          <img src="/uploads/<%= exercise.imgs[0] %>" class="card-img-top exercise-img" alt="<%= exercise.name %>">
+         
+            <h5 class="card-title">
+              <%= exercise.name %>
+            </div>
+            </h5>
+            <a href="/exercise/details?id=<%= exercise._id%>" class="btn-detail"> Show Details</a>
+        
+        <% }) %>
+          
+    </div>
+  
 

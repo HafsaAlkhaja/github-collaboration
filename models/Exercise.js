@@ -8,6 +8,7 @@ const exerciseScema = mongoose.Schema({
   },
   duration: Number,
   imgs: [String],
+  
 })
 const Exercise = mongoose.model("Exercise", exerciseScema)
 module.exports = { Exercise }
