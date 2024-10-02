@@ -1,12 +1,12 @@
-<%- include('../stylingpath/styles', { cssFile: '/css/profile.css' }) %>
+<%- include('../stylingpath/styles', { cssFile: '/css/Edit.css' }) %>
   <form method="POST" action="/user/update" class="edit-form">
-    <div>
+  <div>
     <label for="avatarInput">
       <img class="avatar" src="<%= user.avatar %>" alt="Profile Avatar">
     </label>
     <input type="file" id="avatarInput" name="avatar" accept="image/*">
-    </div>
-    <div class="form-content">
+  </div>
+  <div class="form-content">
     <div>
       <label>Name</label>
       <input type="text" name="name" class="form-control" value="<%= user.name %>" />
@@ -36,6 +36,5 @@
     <button onclick="return confirm('Are you sure you want to delete your profile?');">
       <a href="/user/delete?id=<%= user._id %>">Delete Profile</a>
     </button>
-    </div>
-    </div>
-  </form>
+  </div>
+</form>
