@@ -1,24 +1,30 @@
-<%- include('../stylingpath/styles', { cssFile: '/css/schedule.css' }) %> 
+<%- include('../stylingpath/styles', { cssFile: '/css/schedule.css' }) %>
 
-      <div class="ScheduleDetailBorder">
-        <div class="innerBorderSchedule">
-<h2> <%= schedule.name %></h2>
+  <div class="schedule-details">
+    <h1>
+      <%= schedule.name %>'s Exercises
+    </h1>
+    <p>Date: <%= new Date(schedule.date).toLocaleDateString('en-US', { year: 'numeric' , month: 'short' , day: 'numeric'
+        }) %>
+    </p>
 
-  Date: <%= schedule.date%>
-
- 
-    <%schedule.exercise.forEach(function(exercise){%>
-        
-          <img src="/uploads/<%= exercise.imgs[0] %>" class="card-img-top exercise-img" alt="<%= exercise.name %>">
-         
-            <h5 class="card-title">
-              <%= exercise.name %>
+    <div class="projcard-container">
+      <% schedule.exercise.forEach(function(exercise) { %>
+        <div class="projcard projcard-blue">
+          <div class="projcard-innerbox">
+            <img src="/uploads/<%= exercise.imgs[0] %>" class="projcard-img exercise-img" alt="<%= exercise.name %>">
+            <div class="projcard-textbox">
+              <div class="projcard-title">
+                <h2 class="exercise-name">
+                  <%= exercise.name %>
+                </h2>
+              </div>
+              <div class="projcard-tagbox">
+                <a class="button-31" href="/exercise/details?id=<%= exercise._id %>">Show Details</a>
+              </div>
             </div>
-            </h5>
-            <a href="/exercise/details?id=<%= exercise._id%>" class="btn-detail"> Show Details</a>
-        
+          </div>
+        </div>
         <% }) %>
-          
     </div>
-  
-
+  </div>

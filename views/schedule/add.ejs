@@ -1,50 +1,70 @@
 <%- include('../stylingpath/styles', { cssFile: '/css/schedule.css' }) %>
-<h1>My Schedule</h1>
 
-<form method="POST" action="/schedule/add">
+  <h1>My Schedule</h1>
 
-  <div>
-    <label>Name</label>
-    <input name="name" type="text">
-  </div>
+  <form method="POST" action="/schedule/add">
+    <div>
+      <label>Name</label>
+      <input name="name" type="text">
+    </div>
 
-  <div>
-    <label>Date</label>
-    <input name="date" type="date">
-  </div>
+    <div>
+      <label>Date</label>
+      <input name="date" type="date">
+    </div>
 
+    <div>
+      <label>Select a Category</label>
+      <div class="container mt-5">
+        <div class="accordion accordion-flush mt-4" id="accordionExample">
+          <% exerciseCategory.forEach(function(category, index) { %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading<%= index %>">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapse<%= index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
+                  <%= category.name %>
+                </button>
+              </h2>
+              <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading<%= index %>"
+                data-bs-parent="#accordionExample">
+                <% category.exercise.forEach(function(exercises) { %>
+                  <div class="accordion-body">
+                    <div class="containerss">
+                      <div class="boxes">
+                        <h1 class="exercise-title">
+                          <%= exercises.name %>
+                            <div class="checkbox-wrapper-31">
+                              <!-- Add name="exercise" so the checkbox values can be submitted -->
+                              <input type="checkbox" name="exercise" value="<%= exercises._id %>" />
+                              <svg viewBox="0 0 35.6 35.6">
+                                <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+                                <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+                                <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+                              </svg>
+                            </div>
+                        </h1>
 
-  <div>
-    <label>Select a Category</label>
-    <div class="container mt-5">
-      <div class="accordion accordion-flush mt-4" id="accordionExample">
-        <% exerciseCategory.forEach(function(category, index) { %> 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="heading<%= index %>">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
-                <%= category.name %>
-              </button>
-            </h2>
-            <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading<%= index %>" data-bs-parent="#accordionExample">
-              <% category.exercise.forEach(function(exercises) { %>
-                <div class="accordion-body">
-                  <div class="containerss">
-                    <div class="boxes">
-                      <h1>
-                        <%= exercises.name %>
-                        <%= exercises.description %>
-                      </h1>
-                      <input type="checkbox" name="exercise" value="<%= exercises._id %>"> Select
+                        <p class="exercise-description">
+                          <%= exercises.description %>
+                        </p>
+
+                        <div class="custom-carousel-container">
+                          <div class="custom-carousel-item active">
+                            <img src="/uploads/<%= exercises.imgs[0] %>" alt="<%= exercises.name %> image"
+                              class="d-block w-100">
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
-                </div>
-              <% }) %>
+                  <% }) %>
+              </div>
             </div>
-          </div>
-        <% }) %>
+            <% }) %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary mt-3">Add to Schedule</button>
-</form>
+    <button type="submit" class="btn btn-primary mt-3">Add to Schedule</button>
+  </form>
