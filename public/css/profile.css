@@ -1,4 +1,4 @@
-.profile-form {
+/* .profile-form {
   max-width: 90vw;
   margin: 100px 100px 0 100px;
   background-color: #f9f9f9;
@@ -55,6 +55,84 @@ form button {
   font-size: 1.5em;
   transition: background-color 0.3s ease;
   width: 300px;
+} */
+.profile-form {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  /* background-color: #F9F9F9; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+    background-color: rgba( 255, 255, 255, 0.7); /* 50% transparent white background */
+    /* or */
+    opacity: 1; /* 50% transparent */
+ 
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-info label {
+  font-weight:bolder;
+  margin-bottom: 10px;
+  font-size:xx-large;
+  display: inline-block;
+  width: 100px;
+}
+
+
+.profile-info h3 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.profile-box {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: medium;
+}
+
+.profile-box label {
+  font-weight: bold;
+  display: inline-block;
+  width: 150px;
+}
+
+.profile-box h3 {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: medium;
+}
+
+.submit-button {
+  font-size: large;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f52d2dbb;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-button:hover {
+  background-color: #f52d2de2;
 }
 .avatar {
   padding: 10px;
@@ -64,3 +142,4 @@ form button {
   align-items: center;
   cursor: pointer;
 }
+

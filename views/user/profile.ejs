@@ -1,37 +1,31 @@
 <%- include('../stylingpath/styles', { cssFile: '/css/profile.css' }) %>
-<form method="POST" action="/user/profile" class="profile-form">
-  <div>
-    <label>Name</label>
+<div class="profile-form">
+  <img src=<%= user.avatar %> alt="Profile Picture" class="profile-picture">
+  <div class="profile-box">
+    <!-- <label>Name:</label> -->
+    <h3><%= user.name %></h3>
+  </div>
+  <div class="profile-box">
+    <!-- <label>Email Address:</label> -->
+    <h3><%= user.email %></h3>
+  </div>
+  <div class="profile-box">
+    <label>Weight:</label>
+    <h3><%= user.weight %></h3>
+  </div>
+  <div class="profile-box">
+    <label>Height:</label>
+    <h3><%= user.height %></h3>
+  </div>
+  <div class="profile-box">
+    <label>Medical Condition *if needed*:</label>
+    <h3><%= user.medical %></h3>
+  </div>
+  <div class="profile-box">
+    <label>Goal:</label>
+    <h3><%= user.goal %></h3>
+  </div>
+  <a href=“/user/edit?id=<%= user._id %>“ class="submit-button">Edit Profile</a>
+  <!-- <button type="submit" class="submit-button">Update Profile</button> -->
 
-    <input type="text" name ="name" class="form-control" value= "<%= user.name %>" />
-   
-  </div>
-  <div>
-    <label>Email Address</label>
-    <input type="text" name ="email" class="form-control" value= "<%= user.email %>" />
-  </div>
-  <div>
-    <label>Weight</label>
-    <input type= Number name ="weight" class="form-control"  value= "<%= user.weight %>"/>
-  </div>
-  <div>
-    <label>height</label>
-    <input type= Number name ="height" class="form-control" value="<%= user.height %>" />
-  </div>
-  <div>
-    <label>Medical condition *if needed* </label>
-    <input type= "text" name ="medical" class="form-control" value="<%= user.medical %>"/>
-  </div>
-  <div>
-    <label>Let us know what is your goal</label>
-    <input type= "text" name ="goal" class="form-control" value="<%= user.goal %>"/>
-  </div>
-    <br>
-    <button type="submit" >Create your profile</button>
-  </div>
-</form>
-<form method="POST" action="/user/delete" class="deleteform">
-  <button type="submit" onclick="return confirm('Are you sure you want to delete your profile?');">Delete
-    Profile</button>
-</form>
-
+</div>
