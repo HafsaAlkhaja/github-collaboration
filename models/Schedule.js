@@ -1,17 +1,17 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 const scheduleSchema = mongoose.Schema({
   name: String,
   date: Date,
-  userid: {
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: 'User'
   },
   exercise: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Exercise",
-    },
-  ],
+      ref: 'Exercise'
+    }
+  ]
 })
-const Schedule = mongoose.model("Schedule", scheduleSchema)
+const Schedule = mongoose.model('Schedule', scheduleSchema)
 module.exports = { Schedule }

@@ -13,55 +13,38 @@
     <input name="date" type="date">
   </div>
 
-  
+
   <div>
     <label>Select a Category</label>
-    <div>
-      <% exerciseCategory.forEach(function(category) { %> 
-      
-<div class="container mt-5">
-  <div class="accordion accordion-flush mt-4" 
-       id="accordionExample">
-      <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" 
-                      type="button" 
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" 
-                      aria-expanded="false" 
-                      aria-controls="collapseTwo">
-                <div>
-        
-             <%= category.name %>
-           
-       
-        </div>
+    <div class="container mt-5">
+      <div class="accordion accordion-flush mt-4" id="accordionExample">
+        <% exerciseCategory.forEach(function(category, index) { %> 
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading<%= index %>">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= index %>" aria-expanded="false" aria-controls="collapse<%= index %>">
+                <%= category.name %>
               </button>
-          </h2>
-
-          <div id="collapseTwo" 
-               class="accordion-collapse collapse" 
-               aria-labelledby="headingTwo"
-               data-bs-parent="#accordionExample">
-               <% category.exercise.forEach(function(exercises){%>
-              <div class="accordion-body">
-                <div class="containerss">
-                  <div class="boxes">
-                    <h1>
-                      <%= exercises.name %>
-                      <%= exercises.description %>
-                    </h1>
-                    <input type="checkbox" name="exercise" value="<%= exercises._id %>"> Select
-                    <div>
+            </h2>
+            <div id="collapse<%= index %>" class="accordion-collapse collapse" aria-labelledby="heading<%= index %>" data-bs-parent="#accordionExample">
+              <% category.exercise.forEach(function(exercises) { %>
+                <div class="accordion-body">
+                  <div class="containerss">
+                    <div class="boxes">
+                      <h1>
+                        <%= exercises.name %>
+                        <%= exercises.description %>
+                      </h1>
+                      <input type="checkbox" name="exercise" value="<%= exercises._id %>"> Select
                     </div>
                   </div>
                 </div>
-              </div>
               <% }) %>
+            </div>
           </div>
+        <% }) %>
       </div>
-    <%})%>
+    </div>
   </div>
-</div>
-<button type="submit" class="btn btn-primary mt-3">Add to Schedule</button>
+
+  <button type="submit" class="btn btn-primary mt-3">Add to Schedule</button>
 </form>

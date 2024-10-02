@@ -11,6 +11,7 @@ exports.user_show_get = (req, res) => {
       console.log(err)
     })
 }
+
 exports.user_edit_get = (req, res) => {
   console.log(req.query.id)
   console.log(req.body)
@@ -22,6 +23,7 @@ exports.user_edit_get = (req, res) => {
       console.log(err)
     })
 }
+
 exports.user_update_post = (req, res) => {
   console.log("req.body.id", req.user)
   console.log(req.body)
@@ -33,6 +35,7 @@ exports.user_update_post = (req, res) => {
       console.log(err)
     })
 }
+
 
 exports.user_delete_post = (req, res) => {
   User.findByIdAndDelete(req.user._id)
