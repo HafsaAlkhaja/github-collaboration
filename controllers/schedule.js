@@ -1,6 +1,7 @@
 const { Schedule } = require('../models/Schedule')
 const { Exercise } = require('../models/Exercise')
 const { ExerciseCategory } = require('../models/ExerciseCategory')
+const { User } = require('../models/User')
 
 exports.schedule_create_get = (req, res) => {
   Exercise.find()
@@ -14,38 +15,52 @@ exports.schedule_create_get = (req, res) => {
 
 exports.schedule_create_post = (req, res) => {
   console.log(req.body)
-  let exercises = Array.isArray(req.body.exercise)
-    ? req.body.exercise
-    : [req.body.exercise]
+  let exercises = req.body.exercise
+    ? Array.isArray(req.body.exercise)
+      ? req.body.exercise
+      : [req.body.exercise]
+    : []
   let schedule = new Schedule({
     name: req.body.name,
     date: req.body.date,
     time: req.body.time,
-    exercise: exercises
+    exercise: exercises,
+    user: req.user
   })
-
   schedule
     .save()
     .then(() => {
-      req.body.exercise.forEach((exercise) => {
-        Exercise.findById(exercise)
+      const exercisePromises = exercises.map((exerciseId) => {
+        return Exercise.findById(exerciseId)
           .then((exercise) => {
-            exercise.schedule.push(schedule._id)
-            exercise.save()
+            if (exercise) {
+              exercise.schedule.push(schedule._id) // Only push if exercise exists
+              return exercise.save() // Ensure we return the promise
+            } else {
+              console.log(`Exercise with ID ${exerciseId} not found`) // Log the error
+            }
           })
           .catch((err) => {
-            console.log(err)
+            console.error('Error finding exercise:', err) // Log any errors from finding exercises
           })
       })
-      res.redirect('/schedule/index')
+
+      return Promise.all(exercisePromises) // Wait for all exercise updates
+    })
+    .then(() => {
+      res.redirect('/schedule/index') // Redirect after all saves are complete
     })
     .catch((err) => {
-      console.log(err)
+      console.error('Error saving schedule:', err) // Log the error
+      res.status(500).send('Error saving schedule')
     })
 }
-
 exports.schedule_index_get = (req, res) => {
-  Schedule.find()
+  if (!req.user) {
+    return res.redirect('/auth/google')
+  }
+
+  Schedule.find({ user: req.user._id })
     .populate({
       path: 'exercise',
       populate: {
@@ -79,7 +94,8 @@ exports.schedule_show_get = (req, res) => {
   Schedule.findById(req.query.id)
     .populate('exercise')
     .then((schedule) => {
-      res.render('schedule/detail', { schedule, dayjs })
+      console.log('Schedule found:', schedule)
+      res.render('schedule/details', { schedule })
     })
     .catch((err) => {
       console.log(err)

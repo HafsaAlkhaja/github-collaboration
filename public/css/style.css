@@ -231,4 +231,56 @@ a:hover {
 
 
 
+.discriptionPTP{
+  background-color: #f52d2d;
+  transition: width 0.2s;
+  width: 600px;
+  height: 100px;
+  border-radius: 7px;
+  margin-top: 200px;
+  margin-left: 150px;
+  overflow: hidden;
+}
+
+.discriptionPTP .Name {
+  display: flex;
+}
+
+.discriptionPTP h2{
+  color: black;
+  font-size: 30Spx;
+  padding: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.discriptionPTP img{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  padding: 15px;
+}
+
+/* img:hover{
+  background-color: #ffffff;
+  border: 1px;
+  border-radius: 50%;
+} */
+
+/* img::after{
+  border-radius: 6px;
+} */
+
+.discriptionPTP:hover {
+  width: 600px;
+  height: 300px;
+  border-radius: 5%;
+  transition: 0.5s ease-out;
+}
+
+.discriptionPTP p {
+  color: white;
+  font-size: 27px;
+  padding: 12px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
