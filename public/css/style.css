@@ -88,10 +88,10 @@ a:hover {
 }
 
 .expressions h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 30px;
   font-weight: 300;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   color: #fff;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -229,9 +229,7 @@ a:hover {
   display: block;
 }
 
-
-
-.discriptionPTP{
+.discriptionPTP {
   background-color: #f52d2d;
   transition: width 0.2s;
   width: 600px;
@@ -240,20 +238,21 @@ a:hover {
   margin-top: 200px;
   margin-left: 150px;
   overflow: hidden;
+  animation: pulse 7s infinite;
 }
 
 .discriptionPTP .Name {
   display: flex;
 }
 
-.discriptionPTP h2{
+.discriptionPTP h2 {
   color: black;
   font-size: 30Spx;
   padding: 30px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.discriptionPTP img{
+.discriptionPTP img {
   height: 100px;
   width: 100px;
   display: flex;
@@ -281,6 +280,5 @@ a:hover {
   color: white;
   font-size: 27px;
   padding: 12px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
