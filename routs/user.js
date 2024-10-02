@@ -6,8 +6,8 @@ const ensureLoggedIn = require("../config/ensureLoggedIn")
 const userCtrl = require("../controllers/user")
 // routes
 router.get("/profile", ensureLoggedIn, userCtrl.user_show_get)
-router.get("/profile", userCtrl.user_edit_get)
-router.post("/profile", ensureLoggedIn, userCtrl.user_update_post)
-router.post("/delete", ensureLoggedIn, userCtrl.user_delete_post)
+router.get("/edit", userCtrl.user_edit_get)
+router.post("/update", ensureLoggedIn, userCtrl.user_update_post)
+router.get("/delete", ensureLoggedIn, userCtrl.user_delete_get)
 
 module.exports = router
