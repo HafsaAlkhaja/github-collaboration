@@ -43,6 +43,5 @@ exports.user_delete_post = (req, res) => {
     })
     .catch((err) => {
       console.log(err)
-      res.status(500).send("Error deleting profile")
     })
 }

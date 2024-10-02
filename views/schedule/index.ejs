@@ -7,14 +7,14 @@
       <% schedules.forEach(schedule => { %>
         <div class="article-wrapper">
           <h2 class="scheduleh2"><strong>Name:</strong> <%= schedule.name %></h2>
-          <p class="scheduleP"><strong>Date:</strong> <%= schedule.date.toDateString() %></p>
+          <p class="scheduleP"><strong>Date:</strong> <%= schedule.date %></p>
           <div class="exercise-list">
               <% schedule.exercise.forEach(exercise => { %>
                   <p class="scheduleP" ><strong>Exercise set:</strong> <%= exercise.name %></p>
               <% }) %>
           </div>
           <button class="glowyStuff">
-              <a class="scheduleDetailB" href="/schedule/detail?id=<%= schedule._id %>">Show details</a>
+              <a class="scheduleDetailB" href="/schedule/details?id=<%= schedule._id %>">Show details</a>
           </button>
       </div>
       <% }) %>
