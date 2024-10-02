@@ -1,0 +1,41 @@
+<%- include('../stylingpath/styles', { cssFile: '/css/profile.css' }) %>
+  <form method="POST" action="/user/update" class="edit-form">
+    <div>
+    <label for="avatarInput">
+      <img class="avatar" src="<%= user.avatar %>" alt="Profile Avatar">
+    </label>
+    <input type="file" id="avatarInput" name="avatar" accept="image/*">
+    </div>
+    <div class="form-content">
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" value="<%= user.name %>" />
+    </div>
+    <div>
+      <label>Email Address</label>
+      <input type="text" name="email" class="form-control" value="<%= user.email %>" />
+    </div>
+    <div>
+      <label>Weight</label>
+      <input type=Number name="weight" class="form-control" value="<%= user.weight %>" />
+    </div>
+    <div>
+      <label>height</label>
+      <input type=Number name="height" class="form-control" value="<%= user.height %>" />
+    </div>
+    <div>
+      <label>Medical condition *if needed* </label>
+      <input type="text" name="medical" class="form-control" value="<%= user.medical %>" />
+    </div>
+    <div>
+      <label>Let us know what is your goal</label>
+      <input type="text" name="goal" class="form-control" value="<%= user.goal %>" />
+    </div>
+    <br>
+    <button type="submit">Update</button>
+    <button onclick="return confirm('Are you sure you want to delete your profile?');">
+      <a href="/user/delete?id=<%= user._id %>">Delete Profile</a>
+    </button>
+    </div>
+    </div>
+  </form>
