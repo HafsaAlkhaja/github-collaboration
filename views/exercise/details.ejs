@@ -6,11 +6,15 @@
     </h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
       <div class="carousel-inner">
-        <% exercise.imgs.forEach(function(image) { %>
+
           <div class="carousel-item active">
-            <img src="/uploads/<%= image %>" alt="<%= exercise.name %> image" class="d-block w-100" alt="...">
+            <img src="/uploads/<%= exercise.imgs[1] %>" alt="<%= exercise.name %> image" class="d-block w-100" alt="...">
           </div>
-          <% }) %>
+          <div class="carousel-item">
+          <video controls class="d-block w-100">
+            <source src="/uploads/<%= exercise.imgs[0] %>" type="video/mp4" >
+          </video>
+          </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
