@@ -1,5 +1,5 @@
 <%- include('../stylingpath/styles', { cssFile: '/css/Edit.css' }) %>
-  <form method="POST" action="/user/update" class="edit-form">
+<form method="POST" action="/user/update" enctype="multipart/form-data" class="edit-form">
   <div>
     <label for="avatarInput">
       <img class="avatar" src="<%= user.avatar %>" alt="Profile Avatar">

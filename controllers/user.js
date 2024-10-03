@@ -31,16 +31,34 @@ exports.user_edit_get = (req, res) => {
       res.status(500).send("Internal server error")
     })
 }
-
 exports.user_update_post = (req, res) => {
-  console.log("req.body.id", req.user)
-  console.log(req.body)
-  User.findByIdAndUpdate(req.user, req.body)
+  console.log("req.file:", req.file) // To check if the file was uploaded
+  console.log("req.body:", req.body) // To check the form data
+
+  // Prepare the updated data
+  const updatedData = {
+    name: req.body.name,
+    email: req.body.email,
+    weight: req.body.weight,
+    height: req.body.height,
+    medical: req.body.medical,
+    goal: req.body.goal,
+  }
+
+  // If a file was uploaded, update the avatar field
+  if (req.file) {
+    updatedData.avatar = "/uploads/" + req.file.filename
+  }
+
+  // Update the user document
+  User.findByIdAndUpdate(req.user._id, updatedData)
     .then(() => {
+      console.log("User updated successfully")
       res.redirect("/index")
     })
     .catch((err) => {
-      console.log(err)
+      console.error("Error updating user:", err)
+      res.status(500).send("Error updating user profile")
     })
 }
 
