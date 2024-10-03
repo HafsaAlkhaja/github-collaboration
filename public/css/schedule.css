@@ -1,22 +1,10 @@
 /* Schedule styles */
-.schedule-wrap {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #fff;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 #scheduletitle {
   text-align: center;
   margin-bottom: 20px;
   font-size: 30px;
+  color: rgb(247, 236, 236);
 }
 
 .article-wrapper {
@@ -25,6 +13,8 @@
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
+  max-width: 50vw;
+  margin: 50px auto;
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
@@ -221,11 +211,11 @@ form button {
   position: relative;
 }
 .projcard-title {
-  font-family: "Voces", "Open Sans", arial, sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 24px;
 }
 .projcard-subtitle {
-  font-family: "Voces", "Open Sans", arial, sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #888;
 }
 .projcard-bar {
@@ -373,7 +363,7 @@ form button {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -390,7 +380,7 @@ form button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
+  width: auto;
 }
 
 .button-31:hover,
@@ -404,12 +394,14 @@ form button {
 }
 
 .exercise-name {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
   color: #333;
   text-transform: uppercase;
   flex: 1;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 70px;
 }
 
 .boxes {
@@ -540,8 +532,28 @@ h1 {
   color: #f7f0f0;
   text-align: center;
   margin: 20px 40px;
-  font-family: "Arial", sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-weight: bold;
   border-bottom: 2px solid #ddd;
   padding-bottom: 10px;
+}
+
+.date {
+  font-size: 30px;
+  font-family: "Dank Mono", ui-monospace, monospace;
+  background: linear-gradient(to right, hsl(0, 20%, 99%), hsl(0, 95%, 16%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  margin: 30px;
+}
+
+.notfound {
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
