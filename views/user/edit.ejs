@@ -1,10 +1,10 @@
 <%- include('../stylingpath/styles', { cssFile: '/css/Edit.css' }) %>
-  <form method="POST" action="/user/update" class="edit-form">
+<form method="POST" action="/user/update" enctype="multipart/form-data" class="edit-form">
   <div>
     <label for="avatarInput">
-      <img class="avatar" src="<%= user.avatar %>" alt="Profile Avatar">
+      <img id="avatarPreview" class="avatar" src="<%= user.avatar %>" alt="Profile Avatar">
     </label>
-    <input type="file" id="avatarInput" name="avatar" accept="image/*">
+    <input type="file" id="avatarInput" name="avatar" accept="image/*" onchange="previewAvatar()">
   </div>
   <div class="form-content">
     <div>
@@ -32,9 +32,26 @@
       <input type="text" name="goal" class="form-control" value="<%= user.goal %>" />
     </div>
     <br>
-    <button type="submit">Update</button>
+  <div class="button-container">
+    <button type="submit" class="Btn">Update</button>
     <button onclick="return confirm('Are you sure you want to delete your profile?');">
       <a href="/user/delete?id=<%= user._id %>">Delete Profile</a>
     </button>
   </div>
+  </div>
 </form>
+<script>
+  function previewAvatar() {
+    const fileInput = document.getElementById('avatarInput');
+    const avatarPreview = document.getElementById('avatarPreview');
+
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        avatarPreview.src = e.target.result;
+      };
+      reader.readAsDataURL(file); // Convert the file to a data URL
+    }
+  }
+</script>

@@ -2,10 +2,10 @@
 
   <div class="schedule-details">
     <h1>
-      <%= schedule.name %>'s Exercises
+      <%= schedule.name %>
     </h1>
-    <p>Date: <%= new Date(schedule.date).toLocaleDateString('en-US', { year: 'numeric' , month: 'short' , day: 'numeric'
-        }) %>
+    <p class="date">Date: <%= new Date(schedule.date).toLocaleDateString('en-US', { year: 'numeric' , month: 'short' ,
+        day: 'numeric' }) %>
     </p>
 
     <div class="projcard-container">
@@ -13,11 +13,13 @@
         <div class="projcard projcard-blue">
           <div class="projcard-innerbox">
             <img src="/uploads/<%= exercise.imgs[0] %>" class="projcard-img exercise-img" alt="<%= exercise.name %>">
+
             <div class="projcard-textbox">
               <div class="projcard-title">
                 <h2 class="exercise-name">
                   <%= exercise.name %>
                 </h2>
+
               </div>
               <div class="projcard-tagbox">
                 <a class="button-31" href="/exercise/details?id=<%= exercise._id %>">Show Details</a>

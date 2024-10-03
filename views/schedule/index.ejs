@@ -13,20 +13,20 @@
               <%= schedule.date %>
             </p>
             <div class="exercise-list">
+              <p class="scheduleP"><strong>Exercise set:</strong>
               <% schedule.exercise.forEach(exercise=> { %>
-                <p class="scheduleP"><strong>Exercise set:</strong>
                   <%= exercise.name %>
                 </p>
                 <% }) %>
             </div>
-            <button class="glowyStuff">
-              <a class="scheduleDetailB" href="/schedule/details?id=<%= schedule._id %>">Show details</a>
+            <button >
+              <a class="button-31" href="/schedule/details?id=<%= schedule._id %>">Show details</a>
             </button>
           </div>
           <% }) %>
             <% } else { %>
-              <p>No schedules found. Create one!</p>
+              <p class="notfound">No schedules found. Create one!</p>
               <% } %>
-                <a href="/schedule/add">Create New Schedule</a>
+                <a href="/schedule/add" class="button-31 ">Create New Schedule</a>
     </div>
   </div>

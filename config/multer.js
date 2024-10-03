@@ -31,5 +31,11 @@ const upload = multer({
   limits: { fileSize: 100000000 }, // Increase limit for larger video files
   fileFilter: fileFilter,
 }).array("imgs", 5) // Allow multiple uploads (up to 5 files)
+// For uploading a single profile image (avatar)
+const uploadProfile = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+  limits: { fileSize: 1000000 }, // Limit file size to 1MB for images
+}).single("avatar") // Handle only one file input with name "avatar"
 
-module.exports = upload
+module.exports = { upload, uploadProfile }
